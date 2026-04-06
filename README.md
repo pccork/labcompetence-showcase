@@ -45,6 +45,10 @@ Then open `http://localhost:8080`.
 
 This site is ready for GitHub Pages or any static hosting platform. No build step is required.
 
+## Attribution
+
+This page was designed and validated by Peter Chuk, and built with assistance from ChatGPT.
+
 ## Content sources
 
 The showcase copy is based on:
