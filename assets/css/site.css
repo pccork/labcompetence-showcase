@@ -4,6 +4,8 @@
   --paper: #f5f7f4;
   --white: #ffffff;
   --mist: #e8f0ec;
+  --section-green: #e7f1ea;
+  --section-green-deep: #dbe9df;
   --line: rgba(21, 50, 67, 0.12);
   --sea: #1f6f78;
   --sea-deep: #144c5a;
@@ -18,8 +20,8 @@ html {
 
 body {
   background:
-    radial-gradient(circle at top right, rgba(122, 168, 116, 0.14), transparent 26%),
-    linear-gradient(180deg, #f9fbf8 0%, #eef4f0 100%);
+    radial-gradient(circle at top right, rgba(122, 168, 116, 0.12), transparent 26%),
+    linear-gradient(180deg, #eef5f0 0%, #e4efe7 100%);
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
 }
@@ -165,12 +167,22 @@ body {
 .section-intro,
 .section-video,
 .section-links {
-  background: transparent;
+  background: linear-gradient(180deg, var(--section-green) 0%, var(--section-green-deep) 100%);
+  border-block: 1px solid rgba(21, 50, 67, 0.07);
 }
 
 .section-soft {
-  background: rgba(255, 255, 255, 0.44);
+  background: linear-gradient(180deg, var(--section-green) 0%, var(--section-green-deep) 100%);
   border-block: 1px solid rgba(21, 50, 67, 0.07);
+}
+
+.section {
+  background: linear-gradient(180deg, var(--section-green) 0%, var(--section-green-deep) 100%);
+  border-block: 1px solid rgba(21, 50, 67, 0.05);
+}
+
+.hero-showcase {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .section-heading {
@@ -181,6 +193,16 @@ body {
 .card-tag,
 .status-label {
   color: var(--sea);
+}
+
+.title,
+.content,
+.workflow-card .title,
+.benefit-card .title,
+.showcase-card .title,
+.architecture-node .title,
+.link-panel .title {
+  color: var(--ink);
 }
 
 .lead-copy p,
@@ -216,16 +238,17 @@ body {
 
 .showcase-card {
   height: 100%;
+  background: rgba(255, 255, 255, 0.82);
 }
 
 .workflow-card {
   padding: 2rem;
   height: 100%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(232, 240, 236, 0.7));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(227, 239, 231, 0.9));
 }
 
 .workflow-card.accent {
-  background: linear-gradient(180deg, rgba(242, 234, 223, 0.92), rgba(255, 255, 255, 0.98));
+  background: linear-gradient(180deg, rgba(232, 242, 234, 0.95), rgba(255, 255, 255, 0.92));
 }
 
 .workflow-list li + li {
@@ -234,7 +257,7 @@ body {
 
 .benefit-card {
   height: 100%;
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.82);
 }
 
 .architecture-diagram {
@@ -245,7 +268,7 @@ body {
 }
 
 .architecture-node {
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.85);
   border: 1px solid var(--line);
   border-radius: 24px;
   box-shadow: var(--shadow);
@@ -254,7 +277,7 @@ body {
 }
 
 .accent-node {
-  background: linear-gradient(180deg, rgba(242, 234, 223, 0.95), rgba(255, 255, 255, 0.96));
+  background: linear-gradient(180deg, rgba(226, 239, 229, 0.95), rgba(255, 255, 255, 0.9));
 }
 
 .node-label {
@@ -308,6 +331,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.84);
 }
 
 .link-buttons {
@@ -315,7 +339,7 @@ body {
 }
 
 .showcase-footer {
-  background: #e3ece7;
+  background: #dbe9df;
   border-top: 1px solid rgba(21, 50, 67, 0.08);
 }
 
