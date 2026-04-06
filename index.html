@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab Competence Portal Showcase</title>
+    <meta
+      name="description"
+      content="A static showcase for the Lab Competence Portal, a digital platform for managing laboratory training, competency records, renewal tracking, and POCT onboarding."
+    >
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    >
+    <link rel="stylesheet" href="assets/css/site.css">
+  </head>
+  <body>
+    <section class="hero is-medium hero-showcase">
+      <div class="hero-head">
+        <nav class="navbar is-transparent" aria-label="main navigation">
+          <div class="container">
+            <div class="navbar-brand">
+              <a class="navbar-item brand-mark" href="#top">
+                <span class="brand-lockup">
+                  <img
+                    class="brand-lockup-logo"
+                    src="assets/images/labcompetence_logo.png"
+                    alt="Lab Competence Portal logo"
+                  >
+                  <span class="brand-pill">Lab Competence Portal</span>
+                </span>
+              </a>
+              <a
+                role="button"
+                class="navbar-burger"
+                aria-label="menu"
+                aria-expanded="false"
+                data-target="showcaseNav"
+              >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+
+            <div id="showcaseNav" class="navbar-menu">
+              <div class="navbar-end">
+                <a class="navbar-item" href="#purpose">Purpose</a>
+                <a class="navbar-item" href="#users">User Groups</a>
+                <a class="navbar-item" href="#workflows">Workflows</a>
+                <a class="navbar-item" href="#architecture">Architecture</a>
+                <a class="navbar-item" href="#status">Status</a>
+                <a class="navbar-item" href="#links">Links</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div id="top" class="hero-body">
+        <div class="container">
+          <div class="columns is-vcentered is-variable is-8">
+            <div class="column is-7">
+              <div class="hero-logo-wrap">
+                <img
+                  class="hero-logo"
+                  src="assets/images/labcompetence_logo.png"
+                  alt="Lab Competence Portal logo"
+                >
+              </div>
+              <span class="eyebrow">Static project showcase</span>
+              <h1 class="title is-1 showcase-title">
+                A clearer view of laboratory training, competence, and renewal readiness
+              </h1>
+              <p class="subtitle is-4 showcase-subtitle">
+                The Lab Competence Portal is a digital platform for replacing paper records
+                and spreadsheet tracking with one role-based application for laboratory
+                training, competency assessment, expiry monitoring, and POCT onboarding.
+              </p>
+              <div class="buttons hero-actions">
+                <a
+                  class="button is-primary is-medium is-rounded"
+                  href="https://labcompetence-frontend-841e.onrender.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Open Live Login
+                </a>
+                <a
+                  class="button is-light is-medium is-rounded"
+                  href="https://github.com/pccork/labcompetence-portal"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View GitHub Repository
+                </a>
+              </div>
+            </div>
+
+            <div class="column is-5">
+              <div class="hero-panel">
+                <div class="panel-card">
+                  <p class="panel-label">Designed for</p>
+                  <p class="panel-value">Managers, consultants, training leads, and non-technical reviewers</p>
+                </div>
+                <div class="panel-grid">
+                  <div class="panel-card compact">
+                    <p class="panel-label">Core focus</p>
+                    <p class="panel-value">Training records and competency workflows</p>
+                  </div>
+                  <div class="panel-card compact">
+                    <p class="panel-label">Scope</p>
+                    <p class="panel-value">Hospital labs and POCT services</p>
+                  </div>
+                  <div class="panel-card compact">
+                    <p class="panel-label">Prototype shape</p>
+                    <p class="panel-value">React frontend, Fastify API, PostgreSQL</p>
+                  </div>
+                  <div class="panel-card compact">
+                    <p class="panel-label">Deployment</p>
+                    <p class="panel-value">Static showcase ready for GitHub Pages</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-intro">
+      <div class="container">
+        <div class="columns is-variable is-6">
+          <div class="column is-8">
+            <div class="content lead-copy">
+              <p class="section-kicker">What this app is for</p>
+              <h2 id="purpose" class="title is-2">A digital alternative to fragmented training administration</h2>
+              <p>
+                The portal was created to make laboratory competence management easier to
+                run, easier to review, and easier to audit. Instead of relying on paper
+                forms, manual follow-up, and disconnected spreadsheets, it brings
+                assignments, records, due dates, template versions, and training evidence
+                into one governed workflow.
+              </p>
+              <p>
+                It supports both ordinary laboratory sections and Point of Care Testing
+                workflows, where large numbers of medical and nursing staff may need
+                training through QR-based self-registration.
+              </p>
+            </div>
+          </div>
+          <div class="column is-4">
+            <div class="insight-card">
+              <p class="insight-title">Why it matters</p>
+              <ul>
+                <li>Improves visibility of training status and renewal risk</li>
+                <li>Creates a clearer audit trail for accreditation evidence</li>
+                <li>Reduces admin effort for coordinators and section trainers</li>
+                <li>Supports multi-hospital growth without redesigning the model</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Inside the portal</p>
+          <h2 class="title is-2">The main areas of the prototype dashboard</h2>
+        </div>
+
+        <div class="columns is-multiline">
+          <div class="column is-6-tablet is-4-desktop">
+            <div class="benefit-card">
+              <h3 class="title is-5">Overview</h3>
+              <p>High-level visibility of due training, record activity, templates, and section-level status.</p>
+            </div>
+          </div>
+          <div class="column is-6-tablet is-4-desktop">
+            <div class="benefit-card">
+              <h3 class="title is-5">Users</h3>
+              <p>Account creation, role assignment, staff-type management, and separation of core lab and POCT users.</p>
+            </div>
+          </div>
+          <div class="column is-6-tablet is-4-desktop">
+            <div class="benefit-card">
+              <h3 class="title is-5">Due Training</h3>
+              <p>Assignment planning with renewal intervals, next due dates, and report-style oversight.</p>
+            </div>
+          </div>
+          <div class="column is-6-tablet is-4-desktop">
+            <div class="benefit-card">
+              <h3 class="title is-5">Templates</h3>
+              <p>Reusable digital forms for sections, staff types, competency workflows, and template version history.</p>
+            </div>
+          </div>
+          <div class="column is-6-tablet is-4-desktop">
+            <div class="benefit-card">
+              <h3 class="title is-5">Records</h3>
+              <p>Storage of trainee-specific evidence, trainer details, assessment notes, dates, and sign-off history.</p>
+            </div>
+          </div>
+          <div class="column is-6-tablet is-4-desktop">
+            <div class="benefit-card">
+              <h3 class="title is-5">Sections and POCT</h3>
+              <p>Navigation across lab sections, POCT registration links, and request handling for device-based training.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Primary user groups</p>
+          <h2 id="users" class="title is-2">Built around the people who run and rely on training</h2>
+        </div>
+
+        <div class="columns is-multiline user-columns">
+          <div class="column is-6-tablet is-3-desktop">
+            <article class="showcase-card">
+              <p class="card-tag">Staff / Trainees</p>
+              <h3 class="title is-4">Frontline users</h3>
+              <p>
+                View assigned training, check due dates, review records, and provide
+                evidence of competency for their own sections or devices.
+              </p>
+            </article>
+          </div>
+          <div class="column is-6-tablet is-3-desktop">
+            <article class="showcase-card">
+              <p class="card-tag">Trainers</p>
+              <h3 class="title is-4">Section support</h3>
+              <p>
+                Review records, support sign-off, and help manage section-level training
+                activity while still maintaining their own competence records where needed.
+              </p>
+            </article>
+          </div>
+          <div class="column is-6-tablet is-3-desktop">
+            <article class="showcase-card">
+              <p class="card-tag">Training Coordinators</p>
+              <h3 class="title is-4">Operational control</h3>
+              <p>
+                Manage users, templates, assignments, due dates, POCT requests, and the
+                day-to-day oversight required to keep training moving.
+              </p>
+            </article>
+          </div>
+          <div class="column is-6-tablet is-3-desktop">
+            <article class="showcase-card">
+              <p class="card-tag">Managers / Global Admins</p>
+              <h3 class="title is-4">Estate-wide view</h3>
+              <p>
+                Review system structure across hospitals, support governance, and maintain
+                the organisational setup for wider deployment.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Key workflows</p>
+          <h2 id="workflows" class="title is-2">Two clear pathways: core laboratory training and POCT onboarding</h2>
+        </div>
+
+        <div class="columns is-variable is-6">
+          <div class="column">
+            <div class="workflow-card">
+              <h3 class="title is-4">Ordinary laboratory training workflow</h3>
+              <ol class="workflow-list">
+                <li>Coordinators create users, sections, and reusable training templates.</li>
+                <li>Staff are assigned to section-specific training with renewal intervals and due dates.</li>
+                <li>Training takes place with support from a trainer or section lead.</li>
+                <li>Evidence, assessment notes, dates, and sign-off details are recorded digitally.</li>
+                <li>Completed records are retained against the correct template version for review and audit.</li>
+              </ol>
+            </div>
+          </div>
+          <div class="column">
+            <div class="workflow-card accent">
+              <h3 class="title is-4">POCT self-registration and response workflow</h3>
+              <ol class="workflow-list">
+                <li>A coordinator creates a QR registration link for a POCT section or device.</li>
+                <li>A medical or nursing user scans the code and submits a training request.</li>
+                <li>The portal groups requests by hospital, device, location, and status.</li>
+                <li>A coordinator or trainer replies with training time, location, and instructions.</li>
+                <li>Face-to-face training is completed and the digital record is stored for future renewal tracking.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Technical architecture</p>
+          <h2 id="architecture" class="title is-2">How the Lab Competence Portal is structured</h2>
+          <p class="architecture-intro">
+            The prototype follows a practical three-layer web architecture: React provides
+            the user-facing experience, Fastify handles the API and business workflow layer,
+            and PostgreSQL stores the relational training data that connects users,
+            templates, assignments, sections, hospitals, and records.
+          </p>
+        </div>
+
+        <div class="architecture-diagram">
+          <div class="architecture-node">
+            <p class="node-label">Presentation layer</p>
+            <h3 class="title is-4">React frontend</h3>
+            <p>
+              Rich component libraries and modern SPA patterns support dashboards, login,
+              role-based views, POCT registration flows, and responsive stakeholder-facing screens.
+            </p>
+          </div>
+
+          <div class="architecture-arrow" aria-hidden="true">↓</div>
+
+          <div class="architecture-node accent-node">
+            <p class="node-label">Application layer</p>
+            <h3 class="title is-4">Fastify backend API</h3>
+            <p>
+              Fastify gives the project a lightweight, flexible, and expandable service
+              layer for routing, validation, RBAC, workflow logic, and future growth as the portal evolves.
+            </p>
+          </div>
+
+          <div class="architecture-arrow" aria-hidden="true">↓</div>
+
+          <div class="architecture-node">
+            <p class="node-label">Data layer</p>
+            <h3 class="title is-4">PostgreSQL relational database</h3>
+            <p>
+              PostgreSQL is well suited to building the related data model behind staff,
+              training templates, assignments, competency records, hospital scope, and audit-ready history.
+            </p>
+          </div>
+        </div>
+
+        <div class="columns is-multiline architecture-benefits">
+          <div class="column is-4-desktop is-6-tablet">
+            <div class="benefit-card">
+              <h3 class="title is-5">Why React</h3>
+              <p>
+                React supports a richer UI ecosystem, making it easier to assemble dashboard panels,
+                forms, reusable components, and future workflow enhancements.
+              </p>
+            </div>
+          </div>
+          <div class="column is-4-desktop is-6-tablet">
+            <div class="benefit-card">
+              <h3 class="title is-5">Why Fastify</h3>
+              <p>
+                Fastify keeps the backend fast and modular, which helps when adding new routes,
+                hospitals, staff rules, integrations, or workflow features over time.
+              </p>
+            </div>
+          </div>
+          <div class="column is-4-desktop is-6-tablet">
+            <div class="benefit-card">
+              <h3 class="title is-5">Why PostgreSQL</h3>
+              <p>
+                A relational database is important here because competence management depends on
+                clear links between people, roles, sections, templates, version history, and due dates.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Benefits</p>
+          <h2 class="title is-2">What stakeholders can expect from the portal</h2>
+        </div>
+
+        <div class="columns is-multiline">
+          <div class="column is-6-tablet is-3-desktop">
+            <div class="benefit-card">
+              <h3 class="title is-5">Audit readiness</h3>
+              <p>Clearer records of who was trained, when, by whom, and against which template version.</p>
+            </div>
+          </div>
+          <div class="column is-6-tablet is-3-desktop">
+            <div class="benefit-card">
+              <h3 class="title is-5">Operational visibility</h3>
+              <p>Dashboards make due training, expiring records, and section activity easier to monitor.</p>
+            </div>
+          </div>
+          <div class="column is-6-tablet is-3-desktop">
+            <div class="benefit-card">
+              <h3 class="title is-5">Reduced admin effort</h3>
+              <p>Reusable templates and QR registration reduce repetitive setup and manual follow-up work.</p>
+            </div>
+          </div>
+          <div class="column is-6-tablet is-3-desktop">
+            <div class="benefit-card">
+              <h3 class="title is-5">Scalable design</h3>
+              <p>The data model supports different sections, staff types, hospitals, and POCT pathways.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns is-variable is-7">
+          <div class="column is-7">
+            <div class="section-heading">
+              <p class="section-kicker">Prototype status</p>
+              <h2 id="status" class="title is-2">Current state of the proof of concept</h2>
+            </div>
+            <div class="content status-copy">
+              <p>
+                The current implementation is a working proof of concept with a React
+                frontend, a Fastify backend, and a PostgreSQL database. It already supports
+                role-based access, hospital-scoped data, template versioning, training
+                assignments, training records, and POCT request handling.
+              </p>
+              <p>
+                The Render deployment blueprint is configured as a cost-conscious prototype:
+                a static frontend, a starter backend service, and a basic managed Postgres
+                database. This showcase site is separate and intentionally simpler so it can
+                be deployed directly to GitHub Pages without a build step.
+              </p>
+            </div>
+          </div>
+          <div class="column is-5">
+            <div class="status-stack">
+              <div class="status-tile">
+                <span class="status-label">Frontend</span>
+                <strong>Role-based dashboard and login flow</strong>
+              </div>
+              <div class="status-tile">
+                <span class="status-label">Backend</span>
+                <strong>API for users, assignments, records, templates, and POCT</strong>
+              </div>
+              <div class="status-tile">
+                <span class="status-label">Prototype focus</span>
+                <strong>Operational workflow validation and stakeholder review</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-video">
+      <div class="container">
+        <div class="section-heading has-text-centered">
+          <p class="section-kicker">Project demonstration</p>
+          <h2 class="title is-2">Video walkthrough</h2>
+          <p class="video-intro">
+            A short demonstration of the prototype and the thinking behind the portal.
+          </p>
+        </div>
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/g-2GVflVujo"
+            title="Lab Competence Portal video walkthrough"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="links" class="section section-links">
+      <div class="container">
+        <div class="link-panel">
+          <div>
+            <p class="section-kicker">Project links</p>
+            <h2 class="title is-3">Explore the source and prototype</h2>
+            <p>
+              Use these links to review the codebase, open the live frontend login, or
+              share the showcase with stakeholders.
+            </p>
+          </div>
+          <div class="buttons link-buttons">
+            <a
+              class="button is-primary is-medium is-rounded"
+              href="https://github.com/pccork/labcompetence-portal"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub Repository
+            </a>
+            <a
+              class="button is-link is-medium is-rounded"
+              href="https://labcompetence-frontend-841e.onrender.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Render Frontend Login
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer showcase-footer">
+      <div class="content has-text-centered">
+        <p>
+          <img
+            class="footer-logo"
+            src="assets/images/labcompetence_logo.png"
+            alt="Lab Competence Portal logo"
+          >
+        </p>
+        <p>
+          <strong>Lab Competence Portal Showcase</strong><br>
+          A lightweight static presentation site for demonstrating the project to
+          managers, consultants, and non-technical stakeholders.
+        </p>
+      </div>
+    </footer>
+
+    <script src="assets/js/site.js"></script>
+  </body>
+  </html>
