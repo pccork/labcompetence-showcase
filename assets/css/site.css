@@ -19,9 +19,7 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(circle at top right, rgba(122, 168, 116, 0.12), transparent 26%),
-    linear-gradient(180deg, #eef5f0 0%, #e4efe7 100%);
+  background: linear-gradient(180deg, #eef5f0 0%, #e4efe7 100%);
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
 }
@@ -33,16 +31,6 @@ body {
   color: var(--white);
   position: relative;
   overflow: hidden;
-}
-
-.hero-showcase::after {
-  content: "";
-  position: absolute;
-  inset: auto -10% -18% auto;
-  width: 420px;
-  height: 420px;
-  background: radial-gradient(circle, rgba(242, 234, 223, 0.22), transparent 68%);
-  pointer-events: none;
 }
 
 .navbar-item,
@@ -118,6 +106,10 @@ body {
   margin-top: 2rem;
 }
 
+.button.is-rounded {
+  border-radius: 8px;
+}
+
 .hero-panel {
   position: relative;
   z-index: 1;
@@ -139,7 +131,7 @@ body {
 .link-panel {
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid var(--line);
-  border-radius: 24px;
+  border-radius: 8px;
   box-shadow: var(--shadow);
 }
 
@@ -179,6 +171,10 @@ body {
 .section {
   background: linear-gradient(180deg, var(--section-green) 0%, var(--section-green-deep) 100%);
   border-block: 1px solid rgba(21, 50, 67, 0.05);
+}
+
+.section.section-rag {
+  background: linear-gradient(180deg, rgba(231, 241, 234, 0.98) 0%, rgba(219, 233, 223, 0.98) 100%);
 }
 
 .hero-showcase {
@@ -247,6 +243,56 @@ body {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(227, 239, 231, 0.9));
 }
 
+.rag-flow {
+  display: grid;
+  gap: 1rem;
+  max-width: 880px;
+  margin: 0 auto 2rem;
+}
+
+.rag-step,
+.rag-integration-panel,
+.rag-command-card {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.rag-step {
+  padding: 1.5rem 1.75rem;
+  text-align: center;
+}
+
+.rag-step p,
+.rag-integration-panel p {
+  color: var(--ink-soft);
+}
+
+.rag-integration-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(260px, 0.8fr);
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding: 2rem;
+}
+
+.rag-command-card {
+  padding: 1.25rem;
+  background: rgba(232, 242, 234, 0.92);
+}
+
+.rag-command-card code {
+  display: block;
+  white-space: normal;
+  color: var(--ink);
+  background: transparent;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
 .workflow-card.accent {
   background: linear-gradient(180deg, rgba(232, 242, 234, 0.95), rgba(255, 255, 255, 0.92));
 }
@@ -270,7 +316,7 @@ body {
 .architecture-node {
   background: rgba(255, 255, 255, 0.85);
   border: 1px solid var(--line);
-  border-radius: 24px;
+  border-radius: 8px;
   box-shadow: var(--shadow);
   padding: 1.5rem 1.75rem;
   text-align: center;
@@ -311,7 +357,7 @@ body {
 
 .video-frame {
   position: relative;
-  border-radius: 28px;
+  border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--shadow);
   border: 1px solid var(--line);
@@ -369,6 +415,10 @@ body {
     align-items: flex-start;
   }
 
+  .rag-integration-panel {
+    grid-template-columns: 1fr;
+  }
+
   .link-buttons {
     justify-content: flex-start;
   }
@@ -414,6 +464,6 @@ body {
   .showcase-card,
   .benefit-card,
   .status-tile {
-    border-radius: 20px;
+    border-radius: 8px;
   }
 }

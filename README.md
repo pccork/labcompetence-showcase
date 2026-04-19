@@ -7,6 +7,7 @@ This repository contains a lightweight static showcase website for the Lab Compe
 - purpose of the Lab Competence Portal
 - main user groups and staff roles
 - core laboratory and POCT workflows
+- local SOP and IFU question answering with the companion RAG system
 - stakeholder-facing benefits
 - current prototype status
 - links to the source repository and live frontend login
@@ -56,4 +57,6 @@ The showcase copy is based on:
 - `README.md` from `pccork/labcompetence-portal`
 - `apps/backend/APP_USER_GUIDE.md` from `pccork/labcompetence-portal`
 - `PROJECT_PROPOSAL.md` from `pccork/labcompetence-portal`
+- `README.md` from `pccork/my-rag-system`
+- Local Clinical RAG System demo video: `https://youtu.be/jT6EXEQ9JNM`
 - layout inspiration from `pccork/caremodelhub-showcase`

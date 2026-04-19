@@ -46,6 +46,7 @@
             <div id="showcaseNav" class="navbar-menu">
               <div class="navbar-end">
                 <a class="navbar-item" href="#purpose">Purpose</a>
+                <a class="navbar-item" href="#rag">AI Q&amp;A</a>
                 <a class="navbar-item" href="#users">User Groups</a>
                 <a class="navbar-item" href="#workflows">Workflows</a>
                 <a class="navbar-item" href="#architecture">Architecture</a>
@@ -93,6 +94,14 @@
                   rel="noreferrer"
                 >
                   View GitHub Repository
+                </a>
+                <a
+                  class="button is-light is-medium is-rounded"
+                  href="https://github.com/pccork/my-rag-system"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View Local RAG System
                 </a>
               </div>
             </div>
@@ -207,6 +216,113 @@
               <h3 class="title is-5">Sections and POCT</h3>
               <p>Navigation across lab sections, POCT registration links, and request handling for device-based training.</p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-rag">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">AI knowledge assistant</p>
+          <h2 id="rag" class="title is-2">Connecting the portal to local SOP and IFU question answering</h2>
+          <p class="architecture-intro">
+            The companion
+            <a href="https://github.com/pccork/my-rag-system" target="_blank" rel="noreferrer">Local Clinical RAG System</a>
+            shows how an on-premise LLM assistant could support trainers and trainees
+            during competence sessions. SOPs and IFUs are ingested as PDFs, indexed
+            locally, and retrieved as cited source material before an Ollama-hosted
+            Llama 3.1 model drafts an answer.
+          </p>
+        </div>
+
+        <div class="rag-flow" aria-label="RAG integration flow">
+          <div class="rag-step">
+            <p class="node-label">Existing portal</p>
+            <h3 class="title is-5">Training context</h3>
+            <p>
+              The Lab Competence Portal already knows the trainee, trainer, section,
+              assigned template, device, hospital, due date, and record status.
+            </p>
+          </div>
+          <div class="architecture-arrow" aria-hidden="true">↓</div>
+          <div class="rag-step">
+            <p class="node-label">Local RAG index</p>
+            <h3 class="title is-5">SOP and IFU retrieval</h3>
+            <p>
+              SOP and IFU PDFs are chunked by headings, warnings, cautions, numbered
+              steps, cleaning, maintenance, calibration, and troubleshooting sections,
+              then stored in ChromaDB with metadata filters.
+            </p>
+          </div>
+          <div class="architecture-arrow" aria-hidden="true">↓</div>
+          <div class="rag-step accent-node">
+            <p class="node-label">Answered with citations</p>
+            <h3 class="title is-5">Trainer and trainee Q&amp;A</h3>
+            <p>
+              Questions are answered through a citation-aware prompt using retrieved
+              chunks, with filename, page, section, chunk id, score, user id, session id,
+              and an audit record.
+            </p>
+          </div>
+        </div>
+
+        <div class="columns is-multiline architecture-benefits">
+          <div class="column is-6-tablet is-3-desktop">
+            <div class="benefit-card">
+              <h3 class="title is-5">During training</h3>
+              <p>
+                A trainer can ask for the exact setup, maintenance, warning, or
+                troubleshooting step while completing a live competency session.
+              </p>
+            </div>
+          </div>
+          <div class="column is-6-tablet is-3-desktop">
+            <div class="benefit-card">
+              <h3 class="title is-5">For trainees</h3>
+              <p>
+                A trainee can ask questions against approved local material instead of
+                relying on memory, general web searches, or outdated paper copies.
+              </p>
+            </div>
+          </div>
+          <div class="column is-6-tablet is-3-desktop">
+            <div class="benefit-card">
+              <h3 class="title is-5">For governance</h3>
+              <p>
+                Each answer can be tied back to cited documents and hash-chained audit
+                logs for user and session traceability.
+              </p>
+            </div>
+          </div>
+          <div class="column is-6-tablet is-3-desktop">
+            <div class="benefit-card">
+              <h3 class="title is-5">For deployment</h3>
+              <p>
+                The model can run locally through Ollama, keeping SOP and IFU material
+                inside a controlled environment while the portal remains the workflow hub.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rag-integration-panel">
+          <div>
+            <p class="section-kicker">Possible portal integration</p>
+            <h3 class="title is-3">A Q&amp;A tab inside each training record</h3>
+            <p>
+              A practical next step would be to add an AI Q&amp;A tab to each assigned
+              training record. The portal could pass the current user, role, section,
+              device, template, and document filters to the RAG service. The RAG service
+              would return an answer, citations, retrieved source chunks, and an audit id.
+              Trainers and trainees would still use approved SOPs and IFUs as the source
+              of truth, with the assistant acting as a faster route into the relevant
+              material.
+            </p>
+          </div>
+          <div class="rag-command-card">
+            <p class="node-label">Example query flow</p>
+            <code>question → embeddings → ChromaDB search → cited prompt → Ollama answer → audit log</code>
           </div>
         </div>
       </div>
@@ -468,8 +584,30 @@
         </div>
         <div class="video-frame">
           <iframe
-            src="https://www.youtube.com/embed/g-2GVflVujo"
+            src="https://www.youtube.com/embed/Ntl6fDYZsxw"
             title="Lab Competence Portal video walkthrough"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-video">
+      <div class="container">
+        <div class="section-heading has-text-centered">
+          <p class="section-kicker">RAG demonstration</p>
+          <h2 class="title is-2">Local clinical AI assistant walkthrough</h2>
+          <p class="video-intro">
+            A video overview of the planned local RAG approach for SOP and IFU
+            question answering with citations and audit logging.
+          </p>
+        </div>
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/jT6EXEQ9JNM"
+            title="Local Clinical RAG System video walkthrough"
             loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
@@ -482,11 +620,13 @@
       <div class="container">
         <div class="link-panel">
           <div>
-            <p class="section-kicker">Project links</p>
-            <h2 class="title is-3">Explore the source and prototype</h2>
+            <p class="section-kicker">Planned development</p>
+            <h2 class="title is-3">Next step: connect the assistant to the portal workflow</h2>
             <p>
-              Use these links to review the codebase, open the live frontend login, or
-              share the showcase with stakeholders.
+              The planned direction is to connect the local RAG assistant to the
+              Lab Competence Portal so trainers and trainees can ask SOP and IFU
+              questions from inside a training record, with cited sources and an
+              audit trail linked to the session.
             </p>
           </div>
           <div class="buttons link-buttons">
@@ -497,14 +637,6 @@
               rel="noreferrer"
             >
               GitHub Repository
-            </a>
-            <a
-              class="button is-link is-medium is-rounded"
-              href="https://labcompetence-frontend-841e.onrender.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Render Frontend Login
             </a>
           </div>
         </div>

@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  document.querySelectorAll("section, .showcase-card, .workflow-card, .benefit-card, .status-tile, .link-panel").forEach((element) => {
+  document.querySelectorAll("section, .showcase-card, .workflow-card, .benefit-card, .rag-step, .rag-integration-panel, .status-tile, .link-panel").forEach((element) => {
     element.classList.add("reveal");
   });
 
